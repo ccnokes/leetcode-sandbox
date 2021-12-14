@@ -1,7 +1,7 @@
 /**
  * Given an array of positive numbers and a positive number ‘k,’ find the maximum sum of any contiguous subarray of size ‘k’.
- * @param {number} k
  * @param {number[]} arr
+ * @param {number} k
  */
 export default function findMaxSumSubArray(arr, k) {
   let maxSum = 0;
@@ -22,14 +22,12 @@ export default function findMaxSumSubArray(arr, k) {
 // brute force approach
 export function findMaxSumSubArray_brute(arr, k) {
   let maxSum = 0;
-  let currentSum = 0;
   for (let i = 0; i < arr.length - k; i++) {
-    currentSum += arr[i];
+    let currentSum = arr[i];
     for (let j = 0; j < k - 1; j++) {
       currentSum += arr[i + 1 + j];
     }
     maxSum = Math.max(maxSum, currentSum);
-    currentSum = 0;
   }
   return maxSum;
 }

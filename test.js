@@ -3,6 +3,7 @@ import { twoSum, twoSumSorted } from './src/twoSum.js';
 import addTwoNumbers, { arrToLL, LLtoString } from './src/addTwoNumbers.js';
 import lengthOfLongestSubstring from './src/lengthOfLongestSubstring.js';
 import findMaxSumSubArray, {findMaxSumSubArray_brute} from './src/findMaxSumSubArray.js';
+import findSmallestSubArrayWithGivenSum from './src/findSmallestSubArrayWithGivenSum.js';
 
 // https://leetcode.com/problems/two-sum
 test('twoSum', t => {
@@ -28,9 +29,11 @@ test('addTwoNumbers', t => {
 });
 
 test('lengthOfLongestSubstring', t => {
-  t.is(lengthOfLongestSubstring('abcabcbb'), 'abc');
-  t.is(lengthOfLongestSubstring('bb'), 'b');
-  t.is(lengthOfLongestSubstring('pwwkew'), 'wke');
+  // t.is(lengthOfLongestSubstring('abcabcbb'), 3);
+  // t.is(lengthOfLongestSubstring('bb'), 1);
+  // t.is(lengthOfLongestSubstring('pwwkew'), 3);
+  // t.is(lengthOfLongestSubstring(' '), 1);
+  t.is(lengthOfLongestSubstring('au'), 2);
 });
 
 test('findMaxSumSubArray', t => {
@@ -38,4 +41,10 @@ test('findMaxSumSubArray', t => {
   t.is(findMaxSumSubArray([2, 3, 4, 1, 5], 2), 7); // max sub-array is [3, 4]
 
   t.is(findMaxSumSubArray_brute([2, 1, 5, 1, 3, 2], 3), 9);
+});
+
+test('findSmallestSubArrayWithGivenSum', t => {
+  t.is(findSmallestSubArrayWithGivenSum([2, 1, 5, 2, 3, 2], 7), 2);
+  t.is(findSmallestSubArrayWithGivenSum([2, 1, 5, 2, 8], 7), 1);
+  t.is(findSmallestSubArrayWithGivenSum([3, 4, 1, 1, 6], 8), 3);
 });
