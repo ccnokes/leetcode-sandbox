@@ -5,6 +5,7 @@ import lengthOfLongestSubstring from './src/lengthOfLongestSubstring.js';
 import findMaxSumSubArray, {findMaxSumSubArray_brute} from './src/findMaxSumSubArray.js';
 import findSmallestSubArrayWithGivenSum from './src/findSmallestSubArrayWithGivenSum.js';
 import longestSubstringWithKDistinct from './src/longestSubstringWithKDistinct.js';
+import maxConsecutiveOnes, { maxConsecutiveOnes_brute } from './src/maxConsecutiveOnes.js';
 
 // https://leetcode.com/problems/two-sum
 test('twoSum', t => {
@@ -55,4 +56,20 @@ test('longestSubstringWithKDistinct', t => {
   t.is(longestSubstringWithKDistinct('araaci', 1), 2);
   t.is(longestSubstringWithKDistinct('cbbebi', 3), 5);
   t.is(longestSubstringWithKDistinct('cbbebi', 10), 6);
+});
+
+test('maxConsecutiveOnes_brute', t => {
+  t.is(maxConsecutiveOnes_brute([0, 0, 0, 0], 0), 0);
+  t.is(maxConsecutiveOnes_brute([1, 0, 1], 2), 3);
+  t.is(maxConsecutiveOnes_brute([1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0], 2), 6);
+  t.is(maxConsecutiveOnes_brute([0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1], 3), 10);
+  t.is(maxConsecutiveOnes_brute([1, 1, 0, 0, 1, 1, 1, 0, 1, 1], 3), 10);
+});
+
+test('maxConsecutiveOnes', t => {
+  t.is(maxConsecutiveOnes([0, 0, 0, 0], 0), 0);
+  t.is(maxConsecutiveOnes([1, 0, 1], 2), 3);
+  t.is(maxConsecutiveOnes([1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0], 2), 6);
+  t.is(maxConsecutiveOnes([0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1], 3), 10);
+  t.is(maxConsecutiveOnes([1, 1, 0, 0, 1, 1, 1, 0, 1, 1], 3), 10);
 });
