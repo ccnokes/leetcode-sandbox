@@ -5,12 +5,15 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "ava"
+    "test": "ava --verbose"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "ava": "^3.15.0"
+  },
+  "ava": {
+    "files": ["./src/**/test.js"]
   }
 }

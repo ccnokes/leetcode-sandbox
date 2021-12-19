@@ -1,11 +1,12 @@
 import test from 'ava';
-import { twoSum, twoSumSorted } from './src/twoSum.js';
-import addTwoNumbers, { arrToLL, LLtoString } from './src/addTwoNumbers.js';
-import lengthOfLongestSubstring from './src/lengthOfLongestSubstring.js';
-import findMaxSumSubArray, {findMaxSumSubArray_brute} from './src/findMaxSumSubArray.js';
-import findSmallestSubArrayWithGivenSum from './src/findSmallestSubArrayWithGivenSum.js';
-import longestSubstringWithKDistinct from './src/longestSubstringWithKDistinct.js';
-import maxConsecutiveOnes, { maxConsecutiveOnes_brute } from './src/maxConsecutiveOnes.js';
+import { twoSum, twoSumSorted } from './twoSum.js';
+import addTwoNumbers, { arrToLL, LLtoString } from './addTwoNumbers.js';
+import lengthOfLongestSubstring from './lengthOfLongestSubstring.js';
+import findMaxSumSubArray, {findMaxSumSubArray_brute} from './findMaxSumSubArray.js';
+import findSmallestSubArrayWithGivenSum from './findSmallestSubArrayWithGivenSum.js';
+import longestSubstringWithKDistinct from './longestSubstringWithKDistinct.js';
+import maxConsecutiveOnes, { maxConsecutiveOnes_brute } from './maxConsecutiveOnes.js';
+import fruitsIntoBaskets from './fruitsIntoBaskets.js';
 
 // https://leetcode.com/problems/two-sum
 test('twoSum', t => {
@@ -72,4 +73,11 @@ test('maxConsecutiveOnes', t => {
   t.is(maxConsecutiveOnes([1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0], 2), 6);
   t.is(maxConsecutiveOnes([0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1], 3), 10);
   t.is(maxConsecutiveOnes([1, 1, 0, 0, 1, 1, 1, 0, 1, 1], 3), 10);
+});
+
+test('fruitsIntoBaskets', t => {
+  t.is(fruitsIntoBaskets(['A', 'B', 'C', 'A', 'C']), 3);
+  t.is(fruitsIntoBaskets(['A', 'B', 'C', 'B', 'B', 'C']), 5);
+  t.is(fruitsIntoBaskets([]), 0);
+  t.is(fruitsIntoBaskets(['A']), 1);
 });
