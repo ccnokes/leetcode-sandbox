@@ -30,6 +30,39 @@ export default class ListNode {
 
     return head;
   }
+
+  /**
+   * get element at index
+   * @param {ListNode} head
+   * @param {number} n
+   * @returns {ListNode}
+   */
+  static at(head, n) {
+    let node = head;
+    let i = 0;
+    while (i < n) {
+      node = node.next;
+      i++;
+    }
+    return node;
+  }
+
+  /**
+   * reverse list, returns new copy
+   * @param {ListNode} head
+   * @returns {ListNode}
+   */
+  static reverse(head) {
+    let node = head;
+    let newHead = new ListNode(node.value);
+
+    while (node !== null && node.next !== null) {
+      node = node.next;
+      let next = new ListNode(node.value);
+      next.next = newHead;
+      newHead = next;
+    }
+
+    return newHead;
+  }
 }
-
-
