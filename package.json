@@ -18,5 +18,8 @@
     "files": [
       "./src/**/test.js"
     ]
+  },
+  "dependencies": {
+    "denque": "^2.0.1"
   }
 }
