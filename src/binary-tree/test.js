@@ -7,6 +7,8 @@ import zigZagTraversal from './zigZagTraversal.js';
 import avgLevel from './avgLevel.js';
 import minDepth from './minDepth.js';
 import rightView from './rightView.js';
+import pathSum from './pathSum.js';
+import depthFirstSearch from './dfs.js';
 
 test('orderTraverse', t => {
   const root = new TreeNode(12);
@@ -99,4 +101,39 @@ test('rightView', t => {
   root.left.left.left = new TreeNode(3);
 
   t.deepEqual(rightView(root), [root, root.right, root.right.right, root.left.left.left]);
+});
+
+test('pathSum', t => {
+  const root = new TreeNode(12);
+  root.left = new TreeNode(7);
+  root.right = new TreeNode(1);
+  root.left.left = new TreeNode(9);
+  root.right.left = new TreeNode(10);
+  root.right.right = new TreeNode(5);
+
+  t.is(pathSum(root, 23), true);
+  t.is(pathSum(root, 16), false);
+  t.is(pathSum(root, 18), true);
+
+  const root2 = new TreeNode(1);
+  root2.left = new TreeNode(2);
+  root2.right = new TreeNode(3);
+  root2.left.left = new TreeNode(4);
+  root2.left.right = new TreeNode(5);
+  root2.right.left = new TreeNode(6);
+  root2.right.right = new TreeNode(7);
+
+  t.is(pathSum(root2, 10), true);
+});
+
+test('depthFirstSearch', t => {
+  const root = new TreeNode(1);
+  root.left = new TreeNode(2);
+  root.right = new TreeNode(3);
+  root.left.left = new TreeNode(4);
+  root.left.right = new TreeNode(5);
+  root.right.left = new TreeNode(6);
+  root.right.right = new TreeNode(7);
+
+  t.deepEqual(depthFirstSearch(root), [1, 2, 4, 5, 3, 6, 7]);
 });
