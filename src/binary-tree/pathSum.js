@@ -23,32 +23,32 @@ export default function pathSum(root, sum) {
  * Given a binary tree and a number ‘S’, find if the tree has a path
  * from root-to-leaf such that the sum of all the node values of that path equals ‘S’.
  *
- * Without call stack based recurion
- *
  * @param {TreeNode} root
  * @param {number} sum
- * @returns {number[]}
+ * @returns {boolean}
  */
-// export function pathSum2(root, sum) {
-//   const queue = [root];
+export function pathSumIterative(root, sum) {
+  const stack = [root];
+  let targetSum = sum;
 
-//   while (queue.length > 0) {
-//     let path = [];
-//     let targetSum = sum;
-//     let curr = queue.pop();
-//     while (curr != null) {
-//       path.push(curr.value);
+  while (stack.length > 0) {
+    let node = stack.pop();
+    targetSum -= node.value;
 
-//       // we found the path
-//       if (curr.value === targetSum && curr.left === null && curr.right === null) {
-//         return path;
-//       }
+    while (node != null) {
+      // we found the path
+      if (node.value === targetSum && root.left === null && root.right === null) {
+        return true;
+      }
+      // adjust target if we're not on the last node
+      if (node.left || node.right) targetSum -= node.value;
+      // if we have 2 sides, we'll come back to the right
+      if (node.left && node.right) stack.unshift(node.right);
+      node = node.left || node.right; // take next descendant
+    }
 
-//       targetSum -= curr.value;
-//       if (curr.left && curr.right) queue.push(curr.right);
-//       curr = curr.left || curr.right;
-//     }
-//   }
+    targetSum = sum - root.value; // reset it
+  }
 
-//   return [];
-// }
+  return false;
+}
