@@ -1,5 +1,8 @@
 // @ts-check
 /**
+ * Find index of `key` in sorted array, but we don't know which order it's sorted in, could be ascending or descending.
+ *
+ * This is a straight-forward binary search except that we need to check if the array is asc or desc and then invert our operations accordingly
  *
  * O(logN) time - we reduce the search range in half at every step
  * O(1) space - we don't allocate any additional structures, so constant space
