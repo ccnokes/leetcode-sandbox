@@ -20,6 +20,7 @@
     ]
   },
   "dependencies": {
+    "collections": "^5.1.13",
     "denque": "^2.0.1"
   }
 }

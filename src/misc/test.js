@@ -1,6 +1,7 @@
 import test from 'ava';
 import findMedianSortedArrays from './findMedianSortedArrays.js';
 import ListNode from '../ListNode.js';
+import paint, {input, expected} from './paint.js';
 
 test('findMedianSortedArray', t => {
   t.is(findMedianSortedArrays([1, 3], [2]), 2);
@@ -19,4 +20,8 @@ test('ListNode.reverseFrom', t => {
     ListNode.reverseFrom(list2, ListNode.at(list2, 2), ListNode.at(list2, 5)),
     ListNode.from([1, 2, 7, 5, 4, 3, 8, 9])
   );
+});
+
+test('paint', t => {
+  t.deepEqual(paint(input, 3, 3, 'z'), expected);
 });
