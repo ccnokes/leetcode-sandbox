@@ -19,6 +19,9 @@
  * Given an array of numbers sorted in ascending order, find the ceiling of a given number `target`.
  * The ceiling of the `target` will be the smallest element in the given array greater than or equal to the `target`.
  *
+ * time complexity: O(log N) because we half the range every time
+ * space complexity: O(1)
+ *
  * @param {number[]} arr
  * @param {number} target
  * @returns {number} index of ceiling

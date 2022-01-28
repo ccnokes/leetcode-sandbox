@@ -10,7 +10,7 @@ test('orderAgnosticBinarySearch', t => {
 
 test('findCeiling', t => {
   t.is(findCeiling([4, 6, 10], 6), 1);
-  // t.is(findCeiling([4, 6, 10], 17), -1);
-  // t.is(findCeiling([4, 6, 10], -1), 0);
-  // t.is(findCeiling([1, 3, 8, 10, 15], 12), 4);
+  t.is(findCeiling([4, 6, 10], 17), -1);
+  t.is(findCeiling([4, 6, 10], -1), 0);
+  t.is(findCeiling([1, 3, 8, 10, 15], 12), 4);
 });
