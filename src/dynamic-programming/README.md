@@ -1,0 +1,2 @@
+# Dynamic programming
+What is dynamic programming? As far as I can tell, it's a mind set for optimizing recursion-based problems. For example, if there's a lot of duplicate effort in a recursion problem, memoization can speed it up dramatically. A classic, canonical use case for this is computing the nth fibonacci sequence element. The naive recursive approach is `O(2^N)`, whereas adding memoization brings it down to about `O(n)`. 

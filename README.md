@@ -43,7 +43,7 @@ And from another source:
 
 ### Glossary of some common math-y terms I can never remember:
 
-- logarithm - A logarithm is a mathematical operation that determines how many times a certain number, called the base, is multiplied by itself to reach another number. The exponent or power to which a base must be raised to yield a given number. The inverse function to exponentiation. 10^3 = 1000 and log10(1000) = 3.
+- logarithm - A logarithm is a mathematical operation that determines how many times a certain number, called the base, is multiplied by itself to reach another number. The exponent or power to which a base must be raised to yield a given number. The inverse function to exponentiation. 10^3 = 1000 and log10(1000) = 3. A square root specifies the power and asks for the base, e.g `sqrt(25) = 5` because `5^2 = 25`. ("square" root means the power is 2). Logarithms specificy the base and asks for the power. `log5(25) = 2`. base^power. Base is implicitly 2 in CS use cases.
 - median - is the middle number in a sorted, ascending or descending, list of numbers. Separates higher half from lower.
 - complement - "a technique to encode a symmetric range of positive and negative integers in a way that they can use the same algorithm (hardware) for addition throughout the whole range." How you get one I think it depends on the representation. For example, in a binary representation you can flip bits to get the complement.
 

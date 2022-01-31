@@ -2,6 +2,7 @@ import test from 'ava';
 import findMedianSortedArrays from './findMedianSortedArrays.js';
 import ListNode from '../ListNode.js';
 import paint, {input, expected} from './paint.js';
+import fibonacciSequence from './fibonacciSequence.js';
 
 test('findMedianSortedArray', t => {
   t.is(findMedianSortedArrays([1, 3], [2]), 2);
@@ -24,4 +25,8 @@ test('ListNode.reverseFrom', t => {
 
 test('paint', t => {
   t.deepEqual(paint(input, 3, 3, 'z'), expected);
+});
+
+test('fibonacciSequence', t => {
+  t.is(fibonacciSequence(12), 144);
 });
