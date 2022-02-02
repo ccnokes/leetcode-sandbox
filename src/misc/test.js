@@ -3,6 +3,7 @@ import findMedianSortedArrays from './findMedianSortedArrays.js';
 import ListNode from '../ListNode.js';
 import paint, {input, expected} from './paint.js';
 import fibonacciSequence from './fibonacciSequence.js';
+import isValidParantheses from './validParantheses.js';
 
 test('findMedianSortedArray', t => {
   t.is(findMedianSortedArrays([1, 3], [2]), 2);
@@ -29,4 +30,12 @@ test('paint', t => {
 
 test('fibonacciSequence', t => {
   t.is(fibonacciSequence(12), 144);
+});
+
+test('isValidParantheses', t => {
+  t.is(isValidParantheses('()(()'), false);
+  t.is(isValidParantheses('()'), true);
+  t.is(isValidParantheses('()[]{}'), true);
+  t.is(isValidParantheses('(()){[]}'), true);
+  t.is(isValidParantheses('(())]'), false);
 });
