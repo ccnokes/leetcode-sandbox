@@ -4,6 +4,7 @@ import ListNode from '../ListNode.js';
 import paint, {input, expected} from './paint.js';
 import fibonacciSequence from './fibonacciSequence.js';
 import isValidParantheses from './validParantheses.js';
+import numUniqueEmails from './numUniqueEmails.js';
 
 test('findMedianSortedArray', t => {
   t.is(findMedianSortedArrays([1, 3], [2]), 2);
@@ -38,4 +39,8 @@ test('isValidParantheses', t => {
   t.is(isValidParantheses('()[]{}'), true);
   t.is(isValidParantheses('(()){[]}'), true);
   t.is(isValidParantheses('(())]'), false);
+});
+
+test('numUniqueEmails', t => {
+  t.is(numUniqueEmails(["test.email+alex@leetcode.com", "test.e.mail+bob.cathy@leetcode.com", "testemail+david@lee.tcode.com"]), 2);
 });
