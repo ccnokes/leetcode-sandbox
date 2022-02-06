@@ -11,6 +11,34 @@ export default class ListNode {
     this.next = next;
   }
 
+  // for compatibility with other stuff
+  get val() {
+    return this.value;
+  }
+
+  toValueArray() {
+    const arr = [this.value];
+    let next = this.next;
+    while (next) {
+      arr.push(next.value);
+      next = next.next;
+    }
+    return arr;
+  }
+
+  // NOTE this will iterate over the values because iterators will take the `value` property
+  [Symbol.iterator]() {
+    /** @type ListNode */
+    let current = this;
+    return {
+      next() {
+        const res = current;
+        current = current?.next;
+        return res || { value: null, done: true };
+      }
+    };
+  }
+
   /**
    * Create a linked list from an array
    * @param {any[]} arr
