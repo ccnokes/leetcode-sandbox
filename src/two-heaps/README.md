@@ -7,3 +7,4 @@
 - On a max heap, the largest node is the root, on a min heap the smallest node is the root. Max heap tends to be the default.
 - Usually represented as an array. root is index 0, children are, from l to r: `2i + 1` and `2i + 2`.
 - Not completely sorted, its partially ordered. That the max or min value is the root and accessible in 0(1) is the most important.
+- on heaps, `peek` is O(1), `pop` and `push` is O(log N).
