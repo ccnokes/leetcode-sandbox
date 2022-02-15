@@ -1,3 +1,4 @@
+// @ts-check
 import test from 'ava';
 import findMedianSortedArrays from './findMedianSortedArrays.js';
 import ListNode from '../ListNode.js';
@@ -5,6 +6,8 @@ import paint, {input, expected} from './paint.js';
 import fibonacciSequence from './fibonacciSequence.js';
 import isValidParantheses from './validParantheses.js';
 import numUniqueEmails from './numUniqueEmails.js';
+import rotationCipher from './rotationCipher.js';
+
 
 test('findMedianSortedArray', t => {
   t.is(findMedianSortedArrays([1, 3], [2]), 2);
@@ -43,4 +46,9 @@ test('isValidParantheses', t => {
 
 test('numUniqueEmails', t => {
   t.is(numUniqueEmails(["test.email+alex@leetcode.com", "test.e.mail+bob.cathy@leetcode.com", "testemail+david@lee.tcode.com"]), 2);
+});
+
+test('rotationCipher', t => {
+  t.is(rotationCipher('Zebra-493?', 3), 'Cheud-726?');
+  t.is(rotationCipher('abcdefghijklmNOPQRSTUVWXYZ0123456789', 39), 'nopqrstuvwxyzABCDEFGHIJKLM9012345678');
 });
