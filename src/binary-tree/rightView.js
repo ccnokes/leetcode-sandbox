@@ -15,15 +15,15 @@ export default function rightView(root) {
 
   while (queue.length > 0) {
     let queueLength = queue.length;
-    let currentLevel = [];
+    // let currentLevel = [];
     for (let i = 0; i < queueLength; i++) {
       let curr = queue.shift();
       if (i === queueLength - 1) { // if last node on level, push to results
         result.push(curr);
       }
-      currentLevel.push(curr);
+      // currentLevel.push(curr);
       if (curr.left) queue.push(curr.left);
-      if (curr.right) queue.push(curr.right);
+      if (curr.right) queue.push(curr.right); // always push right last
     }
   }
 

@@ -7,6 +7,7 @@ import fibonacciSequence from './fibonacciSequence.js';
 import isValidParantheses from './validParantheses.js';
 import numUniqueEmails from './numUniqueEmails.js';
 import rotationCipher from './rotationCipher.js';
+import romanNumeralToInt from './romanNumeralToInt.js';
 
 
 test('findMedianSortedArray', t => {
@@ -51,4 +52,11 @@ test('numUniqueEmails', t => {
 test('rotationCipher', t => {
   t.is(rotationCipher('Zebra-493?', 3), 'Cheud-726?');
   t.is(rotationCipher('abcdefghijklmNOPQRSTUVWXYZ0123456789', 39), 'nopqrstuvwxyzABCDEFGHIJKLM9012345678');
+});
+
+test('romanNumeralToInt', t => {
+  t.is(romanNumeralToInt('XIII'), 13);
+  t.is(romanNumeralToInt('IV'), 4);
+  t.is(romanNumeralToInt('MCMXCIV'), 1994);
+  t.is(romanNumeralToInt('LVIII'), 58);
 });

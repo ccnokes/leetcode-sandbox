@@ -12,6 +12,7 @@ import depthFirstSearchIterative, {depthFirstSearchRecursive} from './dfs.js';
 import isSameTree from './sameTree.js';
 import sumOfAllPaths from './sumOfAllPaths.js';
 import hasPath from './hasPath.js';
+import leftView from './leftView.js';
 
 test('orderTraverse', t => {
   const root = new TreeNode(12);
@@ -104,6 +105,26 @@ test('rightView', t => {
   root.left.left.left = new TreeNode(3);
 
   t.deepEqual(rightView(root), [root, root.right, root.right.right, root.left.left.left]);
+});
+
+test('leftView', t => {
+  const root1 = new TreeNode(8);
+  root1.left = new TreeNode(3);
+  root1.right = new TreeNode(10);
+  root1.left.left = new TreeNode(1);
+  root1.left.right = new TreeNode(6);
+  root1.left.right.left = new TreeNode(4);
+  root1.left.right.right = new TreeNode(7);
+  root1.right.right = new TreeNode(14);
+  root1.right.right.left = new TreeNode(13);
+
+  const root2 = new TreeNode(8);
+  root2.right = new TreeNode(10);
+  root2.right.right = new TreeNode(14);
+
+  t.is(leftView(root1), 4);
+  t.is(leftView(new TreeNode(1)), 1);
+  t.is(leftView(root2), 3);
 });
 
 test('pathSum', t => {
