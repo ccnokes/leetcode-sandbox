@@ -31,8 +31,9 @@ function invertObj(obj) {
  * @returns {string}
  */
 export default function rotationalCipher(input, rotationFactor) {
-
+  // will look like: { a: 1, b: 2, ... }. "code" is just an incrementing number, not an ASCII code
   const charToCode = getCharToCharCodeMap(charset);
+  // will look like inverse: { 1: a, b: 2 }
   const codeToChar = invertObj(charToCode);
 
   return input.split('').map(str => {
