@@ -11,5 +11,5 @@ test('romanNumeralToInt', t => {
 });
 
 test('productExceptSelf', t => {
-  t.is(productExceptSelf([1, 2, 3, 4]), [24, 12, 8, 6]);
+  t.deepEqual(productExceptSelf([1, 2, 3, 4]), [24, 12, 8, 6]);
 });
