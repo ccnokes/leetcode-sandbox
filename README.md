@@ -6,7 +6,8 @@ Most of these problems are coming from either this [Educative course](https://ww
 
 ### Bare minimum to know:
 
-*Data structures*
+_Data structures_
+
 - Linked lists
 - Trees, tries, graphs
 - Stacks and queues
@@ -14,14 +15,16 @@ Most of these problems are coming from either this [Educative course](https://ww
 - Vectors, array lists
 - Hash tables
 
-*Algorithms*
+_Algorithms_
+
 - Breadth-first search
 - Depth-first search
 - Binary search
 - Merge sort
 - Quick sort
 
-*Concepts*
+_Concepts_
+
 - Bit manipulation
 - Memory (stack vs heap)
 - Recursion
@@ -29,7 +32,8 @@ Most of these problems are coming from either this [Educative course](https://ww
 - Big O time and space
 
 And from another source:
-*The 10 Most Important Concepts For Coding Interviews (algorithms and data structures)*
+_The 10 Most Important Concepts For Coding Interviews (algorithms and data structures)_
+
 1. Logarithm (Complexity Analysis)
 2. Graph Traversals (BFS & DFS)
 3. Binary Search
@@ -48,13 +52,15 @@ And from another source:
 - complement - "a technique to encode a symmetric range of positive and negative integers in a way that they can use the same algorithm (hardware) for addition throughout the whole range." How you get one I think it depends on the representation. For example, in a binary representation you can flip bits to get the complement.
 
 ### Bitwise operators
+
 - `^` XOR "exclusive or" -- returns a 1 in each bit position for which the corresponding bits of either but not both operands are 1s. Also will be true (1 or greater) if and only if its arguments differ. It returns zero if we take XOR of two same numbers. It returns the same number if we XOR with zero.
 
 ## Binary tree height
 
-A complete binary trees' "height" (number of levels) can be represented as *log N*.
+A complete binary trees' "height" (number of levels) can be represented as _log N_.
 
 There's 7 nodes in this complete binary tree. How many levels are there?
+
 ```
      1
     /  \
@@ -67,8 +73,17 @@ There's 7 nodes in this complete binary tree. How many levels are there?
 1 + floor(log(7))
 = 3 levels
 ```
+
 The first, root level is added in manually, then we get the floored log2 of the node count. That gets us the height of the tree.
 In reverse you could say that `2^levels - 1 = approx node count`.
 Note: In macOS spotlight, you can't specify the log base, but if you divide by `log(2)` it works. Eg: `1 + floor(log(7) / log(2)) = 3`
 
 Balanced trees allow you to work in logarithmic time, rather than linear time, which scales better.
+
+---
+
+## Run one test
+
+```
+npm test -- <test file path>
+```
