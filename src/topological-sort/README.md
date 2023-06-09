@@ -25,9 +25,11 @@ This is Kahn's algorithm:
 - Decrement the in-degrees of the node's children by 1. If the in-degree of a node becomes 0, add it to the source queue
 - Repeat until all vertices have been visited. Return `sortedOrder`.
 
-indegree = "The number of edges directed into a vertex in a directed graph". How many arrows/edges point to this vertex?
-source = "a vertex with no incoming edges. A vertex with an indegree of 0."
-
 Can also do depth-first search.
 
-Vertex is the thing, edge is the relationship to another thing.
+### Terms
+
+- Vertex is the thing, edge is the relationship to another thing.
+- indegree = "The number of edges directed into a vertex in a directed graph". How many arrows/edges point to this vertex?
+  source = "a vertex with no incoming edges. A vertex with an indegree of 0."
+- Terminal node / leaf node - has no child nodes
