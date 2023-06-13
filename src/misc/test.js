@@ -7,6 +7,7 @@ import fibonacciSequence from './fibonacciSequence.js';
 import isValidParantheses from './validParantheses.js';
 import numUniqueEmails from './numUniqueEmails.js';
 import rotationCipher from './rotationCipher.js';
+import findDivisors from './findDivisors.js';
 
 
 test('findMedianSortedArray', t => {
@@ -51,5 +52,20 @@ test('numUniqueEmails', t => {
 test('rotationCipher', t => {
   t.is(rotationCipher('Zebra-493?', 3), 'Cheud-726?');
   t.is(rotationCipher('abcdefghijklmNOPQRSTUVWXYZ0123456789', 39), 'nopqrstuvwxyzABCDEFGHIJKLM9012345678');
+});
+
+test('findDivisors', t => {
+  t.deepEqual(
+    findDivisors(12),
+    [12, 6, 4, 3, 2, 1]
+  );
+  t.deepEqual(
+    findDivisors(8),
+    [8, 4, 2, 1]
+  );
+  t.deepEqual(
+    findDivisors(1),
+    [1]
+  );
 });
 
