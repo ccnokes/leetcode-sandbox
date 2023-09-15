@@ -3,6 +3,7 @@
 This is my attempt to get better at algorithms.
 
 Most of these problems are coming from either this [Educative course](https://www.educative.io/courses/grokking-the-coding-interview) or [leetcode](https://leetcode.com/problemset/all).
+This is a good study guide: https://www.techinterviewhandbook.org/coding-interview-study-plan/ 
 
 ### Bare minimum to know:
 
