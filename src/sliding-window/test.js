@@ -7,6 +7,8 @@ import findSmallestSubArrayWithGivenSum from './findSmallestSubArrayWithGivenSum
 import longestSubstringWithKDistinct from './longestSubstringWithKDistinct.js';
 import maxConsecutiveOnes, { maxConsecutiveOnes_brute } from './maxConsecutiveOnes.js';
 import fruitsIntoBaskets from './fruitsIntoBaskets.js';
+import maxNumberVowels from './maxVowels.js';
+import longestCommonPrefix from './longestCommonPrefix.js';
 
 // https://leetcode.com/problems/two-sum
 test('twoSum', t => {
@@ -81,3 +83,15 @@ test('fruitsIntoBaskets', t => {
   t.is(fruitsIntoBaskets([]), 0);
   t.is(fruitsIntoBaskets(['A']), 1);
 });
+
+test('maxNumberVowels', t => {
+  t.is(maxNumberVowels('leetcode', 3), 2);
+  t.is(maxNumberVowels('aeiou', 2), 2);
+  t.is(maxNumberVowels('abciiidef', 3), 3);
+});
+
+test('longestCommonPrefix', t => {
+  t.is(longestCommonPrefix(["flower","flow","flight"]), 'fl');
+  t.is(longestCommonPrefix(["dog","racecar","car"]), '');
+  t.is(longestCommonPrefix(["flower","fkow"]), 'ow');
+})
