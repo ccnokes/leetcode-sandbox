@@ -3,6 +3,7 @@ import removeDuplicates from './removeDuplicates.js';
 import squareSorted from './squareSorted.js';
 import tripletSumToZero from './tripletSumToZero.js';
 import pairWithTargetSum from './pairWithTargetSum.js';
+import isPalindrome from './isPalindrome.js';
 
 test('removeDuplicates', t => {
   t.is(removeDuplicates([2, 3, 3, 3, 6, 9, 9]), 4);
@@ -25,4 +26,10 @@ test('tripletSumToZero', t => {
 test('pairWithTargetSum', t => {
   t.deepEqual(pairWithTargetSum([1, 2, 3, 4, 6], 6), [1, 3]);
   t.deepEqual(pairWithTargetSum([2, 5, 9, 11], 11), [0, 2]);
+});
+
+test('isPalindrome', t => {
+  t.is(isPalindrome('madam'), true);
+  t.is(isPalindrome('hannah'), true);
+  t.is(isPalindrome('what'), false);
 });

@@ -41,3 +41,38 @@ export default function mergeIntervals(intervals) {
   return merged;
 }
 
+// intervals = [[1,4], [3,7], [9,12]]
+// intervals = [[1,5], [3,7], [4,6]]
+// intervals = [[1,9], [3,8], [4,4]]
+/**
+ * NOTE account for some edge cases: 
+ * [1,9], [4,5] (can fit into each other)
+ * [1,4], [4,5] (equal start/end)
+ * 
+ * @param {[number, number][]} intervals 
+ * @returns {[number, number][]}
+ */
+function mergeIntervalArrays(intervals) {
+  // seed with first interval because they're sorted
+  let result = [intervals[0]];
+  
+  // start with next interval
+  for (let i = 1; i < intervals.length; i++) {
+    const prevInterval = result[result.length - 1];
+    const prevIntervalEnd = prevInterval[1];
+    const intervalStart = intervals[i][0];
+    // if prev interval end is greater than curr start, merge
+    if (intervalStart <= prevIntervalEnd) {
+      // update end time in prevInterval with this interval's end time if it's greater
+      if (intervals[i][1] > prevInterval[1]) {
+        prevInterval[1] = intervals[i][1]; 
+      }
+    }
+    // otherwise no overlap, so push to results
+    else {
+      result.push(intervals[i]);
+    }
+  }
+  
+  return result;
+}

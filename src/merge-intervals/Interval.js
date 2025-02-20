@@ -1,6 +1,14 @@
 // @ts-check
 
 export default class Interval {
+/**
+ * @param {[number, number][]} arr
+ * @returns {Interval[]}
+ */
+  static fromArr(arr) {
+    return arr.map(([start, end]) => new Interval(start, end));
+  }
+
   /**
    * @param {number} start
    * @param {number} end
@@ -15,10 +23,3 @@ export default class Interval {
   }
 }
 
-/**
- * @param {[number, number][]} arr
- * @returns {Interval[]}
- */
-export function fromArr(arr) {
-  return arr.map(([start, end]) => new Interval(start, end));
-}

@@ -1,7 +1,8 @@
 // @ts-check
 
 /**
- *
+ * Given a sorted array of integers, find a pair in the array that sums to a number T.
+ * 
  * Time complexity: O(N)
  * Space complexity: O(1)
  *
