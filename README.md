@@ -3,7 +3,7 @@
 This is my attempt to get better at algorithms.
 
 Most of these problems are coming from either this [Educative course](https://www.educative.io/courses/grokking-the-coding-interview) or [leetcode](https://leetcode.com/problemset/all).
-This is a good study guide: https://www.techinterviewhandbook.org/coding-interview-study-plan/ 
+This is a good study guide: https://www.techinterviewhandbook.org/coding-interview-study-plan/
 
 ### Bare minimum to know:
 
@@ -45,6 +45,8 @@ _The 10 Most Important Concepts For Coding Interviews (algorithms and data struc
 8. Heaps
 9. Dynamic programming
 10. Sorting Algorithms (Quick & Merge)
+
+Basically everything you do you should always ask: can I use a data structure (especially a hash map) to make this more efficient?
 
 ### Glossary of some common math-y terms I can never remember:
 
