@@ -13,6 +13,7 @@ import isSameTree from './sameTree.js';
 import sumOfAllPaths from './sumOfAllPaths.js';
 import hasPath from './hasPath.js';
 import leftView from './leftView.js';
+import maxLevelSum from './maxLevelSum.js';
 
 test('orderTraverse', t => {
   const root = new TreeNode(12);
@@ -202,4 +203,14 @@ test('hasPath', t => {
 
   //t.is(hasPath(root, [1, 0, 7]), false);
   t.is(hasPath(root, [1, 1, 6]), true);
+});
+
+test('maxLevelSum', t => {
+  const root = new TreeNode(1);
+  root.left = new TreeNode(7);
+  root.right = new TreeNode(0);
+  root.left.left = new TreeNode(7);
+  root.right.left = new TreeNode(-8);
+
+  t.is(maxLevelSum(root), 2);
 });

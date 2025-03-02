@@ -9,6 +9,7 @@ import maxConsecutiveOnes, { maxConsecutiveOnes_brute } from './maxConsecutiveOn
 import fruitsIntoBaskets from './fruitsIntoBaskets.js';
 import maxNumberVowels from './maxVowels.js';
 import longestCommonPrefix from './longestCommonPrefix.js';
+import compressString from './compressString.js';
 
 // https://leetcode.com/problems/two-sum
 test('twoSum', t => {
@@ -95,3 +96,9 @@ test('longestCommonPrefix', t => {
   t.is(longestCommonPrefix(["dog","racecar","car"]), '');
   t.is(longestCommonPrefix(["flower","fkow"]), 'ow');
 })
+
+test('compressString', t => {
+  t.is(compressString('abc'), 'abc');
+  t.is(compressString('aaabc'), '3abc');
+  t.is(compressString('Scott likes AAA insurance.'), 'Sco2t likes 3A insurance.');
+});
