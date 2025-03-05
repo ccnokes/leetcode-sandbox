@@ -20,7 +20,7 @@ export default function maxLevelSum(root) {
 
   while(queue.length > 0) {
     const level = [];
-    let size = queue.length;
+    let size = queue.length; // stash the original queue size length, that way we don't process the next level too early
 
     // this for loop ignores i because we're shifting off the front of the queue
     // we just need to count the length of the queue

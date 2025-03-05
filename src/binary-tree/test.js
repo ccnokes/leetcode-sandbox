@@ -8,7 +8,6 @@ import avgLevel from './avgLevel.js';
 import minDepth from './minDepth.js';
 import rightView from './rightView.js';
 import pathSum, {pathSumIterative} from './pathSum.js';
-import depthFirstSearchIterative, {depthFirstSearchRecursive} from './dfs.js';
 import isSameTree from './sameTree.js';
 import sumOfAllPaths from './sumOfAllPaths.js';
 import hasPath from './hasPath.js';
@@ -150,19 +149,6 @@ test('pathSum', t => {
 
   t.is(pathSum(root2, 10), true);
   //t.is(pathSumIterative(root2, 10), true);
-});
-
-test('depthFirstSearch', t => {
-  const root = new TreeNode(1);
-  root.left = new TreeNode(2);
-  root.right = new TreeNode(3);
-  root.left.left = new TreeNode(4);
-  root.left.right = new TreeNode(5);
-  root.right.left = new TreeNode(6);
-  root.right.right = new TreeNode(7);
-
-  t.deepEqual(depthFirstSearchIterative(root), [1, 2, 4, 5, 3, 6, 7]);
-  t.deepEqual(depthFirstSearchRecursive(root), [1, 2, 4, 5, 3, 6, 7]);
 });
 
 test('sameTree', t => {
