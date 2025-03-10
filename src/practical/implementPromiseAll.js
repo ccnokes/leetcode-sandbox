@@ -20,6 +20,11 @@ export default function promiseAll(promises) {
     const results = new Array(promises.length);
     let completed = 0;
 
+    // handle empty array case
+    if (promises.length === 0) {
+      resolve(results);
+    }
+
     promises.forEach((promise, i) => {
       // handle primitive values by wrapping in a Promise
       // if promise = a rejected promise, this doesn't override that, it's still rejected

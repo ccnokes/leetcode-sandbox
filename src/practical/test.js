@@ -34,8 +34,12 @@ test('LRUCache', t => {
 });
 
 test('promiseAll', async t => {
+  await promiseAll([])
+  .then(results => {
+    t.deepEqual(results, []);
+  });
+
   await promiseAll([
-    // Promise.reject(new Error('nope')),
     Promise.resolve(1),
     Promise.resolve(2),
     'abc'
