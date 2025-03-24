@@ -3,6 +3,7 @@ import test from 'ava';
 import './implementFunctionCall.js';
 import LRUCache from './LRUCache.ts';
 import promiseAll from './implementPromiseAll.js';
+import debounce from './debounce.ts';
 
 test('Function.prototype.myCall', t => {
   function multiplyAge(multiplier = 1) {
@@ -57,3 +58,24 @@ test('promiseAll', async t => {
     t.is(results instanceof Error, true);
   });
 });
+
+test('debounce', async t => {
+  let wasCalled = false;
+  
+  const debounced = debounce(() => {
+    wasCalled = true;
+  }, 1);
+
+  t.is(wasCalled, false);
+  debounced();
+
+  await wait(2);
+  
+  t.is(wasCalled, true);
+});
+
+function wait(ms) {
+  return new Promise(resolve => {
+    setTimeout(resolve, ms);
+  });
+}

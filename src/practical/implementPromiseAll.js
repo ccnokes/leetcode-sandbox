@@ -17,7 +17,7 @@
 export default function promiseAll(promises) {
   return new Promise((resolve, reject) => {
     // pre-allocate array to avoid dynamic resizing
-    const results = new Array(promises.length);
+    const results = Array.from({ length: promises.length });
     let completed = 0;
 
     // handle empty array case
