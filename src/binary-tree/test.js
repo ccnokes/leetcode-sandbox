@@ -1,20 +1,31 @@
 // @ts-check
 import test from 'ava';
-import TreeNode from "../TreeNode.js";
+import TreeNode from '../TreeNode.js';
 import orderTraverse from './orderTraversal.js';
 import reverseOrderTraverse from './reverseOrderTraversal.js';
 import zigZagTraversal from './zigZagTraversal.js';
 import avgLevel from './avgLevel.js';
 import minDepth from './minDepth.js';
 import rightView from './rightView.js';
-import pathSum, {pathSumIterative} from './pathSum.js';
+import pathSum, { pathSumIterative } from './pathSum.js';
 import isSameTree from './sameTree.js';
 import sumOfAllPaths from './sumOfAllPaths.js';
 import hasPath from './hasPath.js';
 import leftView from './leftView.js';
 import maxLevelSum from './maxLevelSum.js';
+import { inorderTraversal } from './inorderTraversal.js';
 
-test('orderTraverse', t => {
+test('inorderTraversal', (t) => {
+  const root = new TreeNode(10);
+  root.left = new TreeNode(8);
+  root.right = new TreeNode(12);
+  root.left.left = new TreeNode(6);
+  root.left.right = new TreeNode(9);
+
+  t.deepEqual(inorderTraversal(root), [6, 8, 9, 10, 12]);
+});
+
+test('orderTraverse', (t) => {
   const root = new TreeNode(12);
   root.left = new TreeNode(7);
   root.right = new TreeNode(1);
@@ -22,17 +33,10 @@ test('orderTraverse', t => {
   root.right.left = new TreeNode(10);
   root.right.right = new TreeNode(5);
 
-  t.deepEqual(
-    orderTraverse(root),
-    [
-      [12],
-      [7, 1],
-      [9, 10, 5]
-    ]
-  );
+  t.deepEqual(orderTraverse(root), [[12], [7, 1], [9, 10, 5]]);
 });
 
-test('reverseOrderTraverse', t => {
+test('reverseOrderTraverse', (t) => {
   const root = new TreeNode(12);
   root.left = new TreeNode(7);
   root.right = new TreeNode(1);
@@ -40,17 +44,10 @@ test('reverseOrderTraverse', t => {
   root.right.left = new TreeNode(10);
   root.right.right = new TreeNode(5);
 
-  t.deepEqual(
-    reverseOrderTraverse(root),
-    [
-      [9, 10, 5],
-      [7, 1],
-      [12]
-    ]
-  );
+  t.deepEqual(reverseOrderTraverse(root), [[9, 10, 5], [7, 1], [12]]);
 });
 
-test('zigZagTraversal', t => {
+test('zigZagTraversal', (t) => {
   const root = new TreeNode(12);
   root.left = new TreeNode(7);
   root.right = new TreeNode(1);
@@ -60,18 +57,10 @@ test('zigZagTraversal', t => {
   root.right.left.left = new TreeNode(20);
   root.right.left.right = new TreeNode(17);
 
-  t.deepEqual(
-    zigZagTraversal(root),
-    [
-      [12],
-      [1, 7],
-      [9, 10, 5],
-      [17, 20]
-    ]
-  );
+  t.deepEqual(zigZagTraversal(root), [[12], [1, 7], [9, 10, 5], [17, 20]]);
 });
 
-test('avgLevel', t => {
+test('avgLevel', (t) => {
   const root = new TreeNode(12);
   root.left = new TreeNode(7);
   root.right = new TreeNode(1);
@@ -83,7 +72,7 @@ test('avgLevel', t => {
   t.deepEqual(avgLevel(root), [12.0, 4.0, 6.5]);
 });
 
-test('minDepth', t => {
+test('minDepth', (t) => {
   const root = new TreeNode(12);
   root.left = new TreeNode(7);
   root.right = new TreeNode(1);
@@ -95,7 +84,7 @@ test('minDepth', t => {
   t.is(minDepth(root), 3);
 });
 
-test('rightView', t => {
+test('rightView', (t) => {
   const root = new TreeNode(12);
   root.left = new TreeNode(7);
   root.right = new TreeNode(1);
@@ -104,10 +93,15 @@ test('rightView', t => {
   root.right.right = new TreeNode(5);
   root.left.left.left = new TreeNode(3);
 
-  t.deepEqual(rightView(root), [root, root.right, root.right.right, root.left.left.left]);
+  t.deepEqual(rightView(root), [
+    root,
+    root.right,
+    root.right.right,
+    root.left.left.left,
+  ]);
 });
 
-test('leftView', t => {
+test('leftView', (t) => {
   const root1 = new TreeNode(8);
   root1.left = new TreeNode(3);
   root1.right = new TreeNode(10);
@@ -127,7 +121,7 @@ test('leftView', t => {
   t.is(leftView(root2), 3);
 });
 
-test('pathSum', t => {
+test('pathSum', (t) => {
   const root = new TreeNode(12);
   root.left = new TreeNode(7);
   root.right = new TreeNode(1);
@@ -151,7 +145,7 @@ test('pathSum', t => {
   //t.is(pathSumIterative(root2, 10), true);
 });
 
-test('sameTree', t => {
+test('sameTree', (t) => {
   const root = new TreeNode(1);
   root.left = new TreeNode(2);
   root.right = new TreeNode(3);
@@ -168,7 +162,7 @@ test('sameTree', t => {
   t.is(isSameTree(root, root3), false);
 });
 
-test('sumOfAllPaths', t => {
+test('sumOfAllPaths', (t) => {
   const root = new TreeNode(1);
   root.left = new TreeNode(0);
   root.right = new TreeNode(1);
@@ -179,7 +173,7 @@ test('sumOfAllPaths', t => {
   t.is(sumOfAllPaths(root), 332);
 });
 
-test('hasPath', t => {
+test('hasPath', (t) => {
   const root = new TreeNode(1);
   root.left = new TreeNode(0);
   root.right = new TreeNode(1);
@@ -191,7 +185,7 @@ test('hasPath', t => {
   t.is(hasPath(root, [1, 1, 6]), true);
 });
 
-test('maxLevelSum', t => {
+test('maxLevelSum', (t) => {
   const root = new TreeNode(1);
   root.left = new TreeNode(7);
   root.right = new TreeNode(0);
