@@ -33,19 +33,19 @@ Ways we could expand/improve this:
 - notification on queue drained/complete - onQueueComplete
 */
 
-type Task = () => Promise<any>;
+type Task = () => Promise<unknown>;
 
 export function createConcurrencyLimiter(
   concurrencyLimit: number = 3,
   initialTasks?: Task[],
 ) {
   const taskQueue = [...(initialTasks ?? [])];
-  const inFlightTasks = new Map<string, Promise<any>>();
+  // Map is not strictly needed now but enables other features later like cancellation or evict
+  const inFlightTasks = new Map<string, Promise<unknown>>();
 
   function process() {
     while (taskQueue.length > 0 && inFlightTasks.size < concurrencyLimit) {
-      const task = taskQueue.shift();
-      if (!task) return;
+      const task = taskQueue.shift()!; // assert not undefined because we checked the length above
 
       const taskId = crypto.randomUUID();
       const taskPromise = task();
