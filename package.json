@@ -16,7 +16,10 @@
   },
   "ava": {
     "files": [
-      "./src/**/test.js"
+      "./src/**/*test.js"
+    ],
+    "nodeArguments": [
+      "--experimental-strip-types"
     ]
   },
   "dependencies": {

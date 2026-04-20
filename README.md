@@ -90,3 +90,69 @@ Balanced trees allow you to work in logarithmic time, rather than linear time, w
 ```
 npm test -- <test file path>
 ```
+
+## To work on
+
+Linked lists
+
+- reverse a linked list
+- remove nth node from end
+- detect/remove cycle
+- reorder list
+
+K-way merge
+Could add: merge k sorted lists, kth smallest in a matrix, find k pairs with smallest sums.
+
+Backtracking
+No README and only 2 problems. Missing: N-queens, word search, sudoku solver, letter combinations of phone number. Backtracking has a distinct recursive template worth mastering explicitly.
+
+Graph BFS/DFS
+Missing: clone graph, course schedule detection, word ladder, connected components, Dijkstra's shortest path.
+
+Heaps
+3 problems but heaps appear in many contexts (top K frequent elements, task scheduler, merge k lists). More variety would help.
+
+Practical / Frontend
+
+Async / Concurrency
+
+- throttle (complement to debounce)
+- Promise.allSettled, Promise.race, Promise.any
+- Async queue with concurrency limit (e.g. max 3 requests in flight)
+- Retry with exponential backoff
+
+Browser APIs / DOM
+
+- Infinite scroll / intersection observer logic
+- Virtual list (render only visible rows from a large array)
+- Deep clone / deep equal (structuredClone edge cases)
+- Implement a basic CSS selector engine (querySelector)
+
+State / Data
+
+- Implement useState + useEffect from scratch (tiny React)
+- Immutable update helpers (logic behind Immer)
+- Observable / reactive value (tiny RxJS/signal)
+- Pub/sub with namespaced events (extends EventEmitter)
+
+Functions / Patterns
+
+- curry and partial application
+- pipe / compose
+- Memoize with configurable cache size
+- Deep object diff (what changed between two state snapshots)
+
+Serialization
+
+- Implement JSON.stringify / JSON.parse (handles circular refs, custom replacers)
+- URL query string parser/serializer
+
+## Design patterns to add
+
+- Observer
+- Proxy
+- Decorator
+- Mediator
+- Command
+- Adapter
+- State Machine
